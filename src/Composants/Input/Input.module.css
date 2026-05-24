@@ -1,0 +1,14 @@
+.button {
+  background-color: purple;
+  color: white;
+  font-weight: bolder;
+  padding: 10px;
+  border-radius: 0 20px 20px 0;
+  animation: all 4000;
+}
+button:hover {
+  transform: translateX(5px);
+  background-color: white;
+  color: purple;
+  animation: all 4000;
+}

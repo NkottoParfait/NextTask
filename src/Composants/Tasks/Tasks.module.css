@@ -1,0 +1,46 @@
+.bouton {
+  border: 1px solid rgb(100, 99, 99);
+  border-radius: 10px;
+  padding: 5px;
+}
+.deleteBouton {
+  color: gray;
+}
+.deleteBouton:hover {
+  color: red;
+  background-color: #1a1b1f;
+}
+.modifyBouton {
+  color: gray;
+}
+.modifyBouton:hover {
+  color: blue;
+  background-color: #1a1b1f;
+}
+.containDefault {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgb(59, 56, 56);
+  border-radius: 8px;
+  gap: 8px;
+  padding: 8px;
+  font-weight: 400;
+  background-color: #1a1b1fee;
+  color: antiquewhite;
+}
+
+.containChecker {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgb(59, 56, 56);
+  border-radius: 8px;
+  gap: 8px;
+  padding: 8px;
+  font-weight: 400;
+  background-color: rgba(0, 128, 0, 0.315);
+  color: antiquewhite;
+  text-decoration: line-through;
+}
+.text {
+  overflow-x: auto;
+}
