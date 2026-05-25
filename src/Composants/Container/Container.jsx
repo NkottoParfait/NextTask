@@ -3,11 +3,23 @@ import Header from "../Header/Header";
 import Input from "../Input/Input";
 import Tasks from "../Tasks/Tasks";
 import Footer from "../Footer/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Container = () => {
   const [task, setTask] = useState(""); //Declaration de la state pour gerer les taches
   const [list, setList] = useState([]); //Declaration de la state pour gerer la liste de toutes les taches
+
+  // Efect qui recupere les donne du local storage et les place dans la List si ces donne existe
+  useEffect(() => {
+    const stockedTask = localStorage.getItem("taskList");
+    if (stockedTask) {
+      const save = setList(JSON.parse(stockedTask));
+    }
+  }, []);
+  // fonction de sauvegarde de la liste de tache dans le local storage
+  const saveInLocalStarage = (task) => {
+    localStorage.setItem("taskList", JSON.stringify(task));
+  };
 
   // Fonction pour ajouter une tache a la list
   const addTask = (e) => {
@@ -21,7 +33,9 @@ const Container = () => {
         id: list.length + 1,
         check: false,
       };
-      setList([...list, newTask]); //Ajoute de objet grace a un spread operator
+      setList([...list, newTask]); //Ajoute de objet grace a un spread operator\
+      const newList = [...list, newTask];
+      saveInLocalStarage(newList);
       setTask("");
     } else {
       alert(
@@ -34,13 +48,15 @@ const Container = () => {
     const newlist = list.map((task) =>
       task.id === id ? { ...task, check: !task.check } : task,
     );
-    console.log(newlist);
     setList(newlist);
+    saveInLocalStarage(newlist);
   };
 
   // fonction pour supprimer un tache
   const deleteTask = (id) => {
     setList(list.filter((task) => task.id !== id));
+    const newlist = list.filter((task) => task.id !== id);
+    saveInLocalStarage(newlist);
   };
   // fonction pour modifier une tache
   const modifyTask = (id) => {
@@ -50,6 +66,7 @@ const Container = () => {
         task.id === id ? { ...task, text: newTask } : task,
       );
       setList(newlist);
+      saveInLocalStarage(newlist);
     } else {
       alert("Enter du text");
     }
