@@ -19,7 +19,7 @@ const Header = () => {
         </h2>
       </div>
       <div>
-        <h3 className="italic text-sm font-thin pb-4">
+        <h3 className="italic text-sm font-thin pb-4 max-sm:text-[10px]">
           Organiser votre journee
         </h3>
       </div>

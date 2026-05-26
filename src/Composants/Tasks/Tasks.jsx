@@ -7,12 +7,12 @@ const Tasks = ({ list, deleteTask, modifyTask, changeCheck }) => {
   const truenumber = trueList.length;
   const falsenumber = list.length - truenumber;
   return (
-    <div className="p-3 m-3 w-3/5 border-2 bg-[#1a1b1f] border-stone-700 shadow-md shadow-blue-600 rounded-2xl flex flex-col gap-2">
+    <div className="p-3 m-3 w-3/5 border-2 bg-[#1a1b1f] border-stone-700 shadow-md shadow-blue-600 rounded-2xl flex flex-col gap-2 break-all max-sm:text-[12px] max-sm:w-9/10">
       <div className="flex gap-2 justify-center items-center">
         <img src={logoTache} className="size-12" alt="logo du site" />
 
         <h1 className="font-extrabold text-3xl text-center text-white">
-          Mes taches
+          My Tasks
         </h1>
       </div>
       <div>
@@ -37,7 +37,7 @@ const Tasks = ({ list, deleteTask, modifyTask, changeCheck }) => {
             }
           >
             <div className="flex gap-4">
-              <div className="size-[1cm] text-center p-1.5 font-black rounded-full bg-gray-700 text-white">
+              <div className="size-[1cm] text-center p-1.5 font-black rounded-full bg-gray-700 text-white ">
                 {task.check ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

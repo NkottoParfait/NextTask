@@ -72,6 +72,7 @@ const Container = () => {
     }
   };
 
+
   return (
     <div className={styles.container}>
       <Header />
@@ -83,7 +84,7 @@ const Container = () => {
         changeCheck={changeCheck}
       />
       <Footer list={list} />
-      <footer class="text-[#7a7a7a] italic font-thin text-sm mt-6">
+      <footer class="text-[#7a7a7a] italic font-thin text-sm mt-6 max-sm:text-[10px]">
         &copy; 2026 NextTask v.1.0 Parfait Nkotto Tous droits reserves
       </footer>
     </div>

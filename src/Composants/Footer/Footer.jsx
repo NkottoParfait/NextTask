@@ -7,7 +7,7 @@ const Footer = ({ list }) => {
     <>
       {" "}
       {list.length ? (
-        <div className="bg-gray-800 font-bold">
+        <div className="bg-gray-800 font-bold max-sm:text-sm">
           <h3>
             {" "}
             Tu as elimine{" "}
